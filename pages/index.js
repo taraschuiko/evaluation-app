@@ -1,12 +1,12 @@
-import React from 'react'
-import {ThemeContext} from '../contexts/themeContext'
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import React from 'react';
+import Head from 'next/head';
+import { ThemeContext } from '../contexts/themeContext';
+import styles from '../styles/Home.module.css';
 
 export default function Home() {
-  const {theme} = React.useContext(ThemeContext)
+  const { theme } = React.useContext(ThemeContext);
   return (
-    <div className={`${styles.container} ${theme == 'dark' ? styles['container--dark'] : ''}`}>
+    <div className={`${styles.container} ${theme === 'dark' ? styles['container--dark'] : ''}`}>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
@@ -14,11 +14,14 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Welcome to
+          {' '}
+          <a href="https://nextjs.org">Next.js!</a>
         </h1>
 
         <p className={styles.description}>
-          Get started by editing{' '}
+          Get started by editing
+          {' '}
           <code className={styles.code}>pages/index.js</code>
         </p>
 
@@ -59,10 +62,11 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by
+          {' '}
           <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
         </a>
       </footer>
     </div>
-  )
+  );
 }

@@ -1,13 +1,13 @@
-import React from 'react'
+import React from 'react';
 
-export const ThemeContext = React.createContext()
+export const ThemeContext = React.createContext();
 
-export const ThemeContextProvider = (props) => {
-  const [theme, setTheme] = React.useState('dark')
+export const ThemeContextProvider = ({ children }) => {
+  const [theme, setTheme] = React.useState('dark');
 
   return (
-    <ThemeContext.Provider value={{theme, setTheme}}>
-      {props.children}
+    <ThemeContext.Provider value={{ theme, setTheme }}>
+      {children}
     </ThemeContext.Provider>
-  )
-}
+  );
+};
