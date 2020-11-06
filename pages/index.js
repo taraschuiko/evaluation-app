@@ -1,9 +1,12 @@
+import React from 'react'
+import {ThemeContext} from '../contexts/themeContext'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
+  const {theme, setTheme} = React.useContext(ThemeContext)
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${theme == 'dark' ? styles['container--dark'] : ''}`}>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
