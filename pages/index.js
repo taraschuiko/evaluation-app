@@ -4,7 +4,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
-  const {theme, setTheme} = React.useContext(ThemeContext)
+  const {theme} = React.useContext(ThemeContext)
   return (
     <div className={`${styles.container} ${theme == 'dark' ? styles['container--dark'] : ''}`}>
       <Head>

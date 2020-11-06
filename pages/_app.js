@@ -1,3 +1,4 @@
+import React from 'react'
 import {ThemeContextProvider} from '../contexts/themeContext'
 import '../styles/globals.css'
 
