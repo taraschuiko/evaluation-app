@@ -1,8 +1,10 @@
-const initialState = {};
+const initialState = {
+  auth: false,
+};
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-
+    default: return state;
   }
 };
 

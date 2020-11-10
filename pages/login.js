@@ -23,6 +23,7 @@ export default function Login() {
       </form>
       <span>
         Don't have an accout?
+        {' '}
         <Link href="/signup"><a className={styles.registerLink}>Sign up</a></Link>
       </span>
     </div>
