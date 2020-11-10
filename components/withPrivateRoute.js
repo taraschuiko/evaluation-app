@@ -3,9 +3,7 @@ import Router from 'next/router';
 
 const login = '/login';
 
-const checkUserAuthentication = () => {
-  return { auth: null };
-};
+const checkUserAuthentication = () => ({ auth: null });
 
 export default function WrappedComponent() {
   const hocComponent = ({ ...props }) => <WrappedComponent {...props} />;
@@ -23,7 +21,7 @@ export default function WrappedComponent() {
         Router.replace(login);
       }
     } else if (WrappedComponent.getInitialProps) {
-      const wrappedProps = await WrappedComponent.getInitialProps({...context, auth: userAuth});
+      const wrappedProps = await WrappedComponent.getInitialProps({ ...context, auth: userAuth });
       return { ...wrappedProps, userAuth };
     }
 
