@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { connect } from 'react-redux';
+import { login as loginAction } from '../store/actions';
 import styles from '../styles/Login.module.css';
 
-export default function Login() {
+function Login({ dispatchLogin }) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -10,6 +12,7 @@ export default function Login() {
   const login = (e) => {
     e.preventDefault();
     // Do something
+    dispatchLogin();
   };
 
   return (
@@ -29,3 +32,8 @@ export default function Login() {
     </div>
   );
 }
+
+const mapStateToProps = (state) => ({ auth: state.auth });
+const mapDispatchToProps = { dispatchLogin: loginAction };
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
