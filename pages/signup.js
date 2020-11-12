@@ -13,7 +13,7 @@ export default function Signup() {
   };
 
   return (
-    <div className={styles.container}>
+    <div>
       <h1>Sign Up</h1>
       <form className={styles.form} onSubmit={signup}>
         <input type="text" placeholder="Full name" value={name} onChange={(e) => setName(e.target.value)} className={styles.input} />

@@ -1,4 +1,6 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
+import styles from '../styles/Theme.module.css';
 
 export const ThemeContext = React.createContext();
 
@@ -7,6 +9,9 @@ export const ThemeContextProvider = ({ children }) => {
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
+      <Helmet>
+        <body className={theme === 'dark' && styles['body--dark']} />
+      </Helmet>
       {children}
     </ThemeContext.Provider>
   );
