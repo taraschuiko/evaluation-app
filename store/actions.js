@@ -6,3 +6,9 @@ export function login() {
     payload: true,
   };
 }
+
+export function loginAsync() {
+  return (dispatch) => setTimeout(() => {
+    dispatch(login());
+  }, 1000);
+}

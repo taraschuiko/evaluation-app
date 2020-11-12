@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Router from 'next/router';
 
 function Dashboard({ children, auth }) {
-  useEffect(() => { if (!auth) Router.replace(`/login?originalUrl=${window.location.search}`); });
+  useEffect(() => {if (!auth) Router.replace(`/login?originalRoute=${window.location.pathname}`); });
   return auth ? (children) : null;
 }
 

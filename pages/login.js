@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { connect } from 'react-redux';
-import { login as loginAction } from '../store/actions';
+import { loginAsync } from '../store/actions';
 import styles from '../styles/Login.module.css';
 
-function Login({ dispatchLogin }) {
+function Login({ loginAction }) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -12,7 +12,7 @@ function Login({ dispatchLogin }) {
   const login = (e) => {
     e.preventDefault();
     // Do something
-    dispatchLogin();
+    loginAction();
   };
 
   return (
@@ -34,6 +34,6 @@ function Login({ dispatchLogin }) {
 }
 
 const mapStateToProps = (state) => ({ auth: state.auth });
-const mapDispatchToProps = { dispatchLogin: loginAction };
+const mapDispatchToProps = { loginAction: loginAsync };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
