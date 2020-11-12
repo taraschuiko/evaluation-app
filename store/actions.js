@@ -8,7 +8,6 @@ export function login() {
 }
 
 export function loginAsync() {
-  return (dispatch) => setTimeout(() => {
-    dispatch(login());
-  }, 1000);
+  // Placeholder url fetching
+  return (dispatch) => fetch('https://jsonplaceholder.typicode.com/users').then(() => dispatch(login()));
 }

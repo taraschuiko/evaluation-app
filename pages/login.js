@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Router from 'next/router';
 import Link from 'next/link';
 import { connect } from 'react-redux';
 import { loginAsync } from '../store/actions';
@@ -11,8 +12,12 @@ function Login({ loginAction }) {
 
   const login = (e) => {
     e.preventDefault();
-    // Do something
-    loginAction();
+    loginAction().then(() => {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('originalRoute')) {
+        Router.replace(urlParams.get('originalRoute'));
+      }
+    });
   };
 
   return (
