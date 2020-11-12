@@ -7,7 +7,6 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case LOGIN: {
-      console.log('login', action);
       return { ...state, auth: action.payload };
     }
     default: return state;
